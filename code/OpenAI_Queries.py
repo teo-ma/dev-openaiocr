@@ -50,7 +50,7 @@ try:
 
     col1, col2, col3 = st.columns([1,2,1])
     with col1:
-        st.image(os.path.join('images','microsoft.png'))
+        st.image(os.path.join('images','azure-3d-hero-openai.avif'))
 
     col1, col2, col3 = st.columns([2,2,2])
     with col3:

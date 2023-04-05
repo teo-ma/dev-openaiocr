@@ -108,8 +108,7 @@ def get_prompt_results(number_of_results: int=VECT_NUMBER):
         return pd.DataFrame()
 
 # Connect to the Redis server
-redis_conn = Redis(host= os.environ.get('REDIS_ADDRESS','localhost'), port=6379, password=os.environ.get('REDIS_PASSWORD',None)) #api for Docker localhost for local execution
-
+redis_conn = Redis(host= os.environ.get('REDIS_ADDRESS','localhost'), port=os.environ.get('REDIS_PORT',10000), password=os.environ.get('REDIS_PASSWORD',None)) #api for Docker localhost for local execution
 # Check if Redis index exists
 index_name = "embeddings-index"
 prompt_index_name = "prompt-index"
