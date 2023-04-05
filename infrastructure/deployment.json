@@ -241,7 +241,7 @@
               "ports": [
                 {
                   "protocol": "TCP",
-                  "port": 6379
+                  "port": 10000
                 }
               ],
               "volumeMounts": [
@@ -259,7 +259,7 @@
           "ports": [
             {
               "protocol": "TCP",
-              "port": 6379
+              "port": 10000
             }
           ],
           "dnsNameLabel": "[parameters('DNSNameLabel')]"

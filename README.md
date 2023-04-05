@@ -6,14 +6,19 @@ A simple web application for a OpenAI-enabled document search. This repo uses Az
 
 # Running this repo
 You have multiple options to run the code:
--   [Deploy on Azure (WebApp + Redis Stack)](#deploy-on-azure-webapp--redis-stack)
--   [Run everything locally in Docker (WebApp + Redis Stack)](#run-everything-locally-in-docker-webapp--redis-stack)
--   [Run everything locally in Python with Conda (WebApp only)](#run-everything-locally-in-python-with-conda-webapp-only)
--   [Run everything locally in Python with venv](#run-everything-locally-in-python-with-venv)
--   [Run WebApp locally in Docker against an existing Redis deployment](#run-webapp-locally-in-docker-against-an-existing-redis-deployment)
+- [Azure OpenAI Embeddings QnA](#azure-openai-embeddings-qna)
+- [Running this repo](#running-this-repo)
+  - [Deploy on Azure (WebApp + Redis Stack)](#deploy-on-azure-webapp--redis-stack)
+  - [Run everything locally in Docker (WebApp + Redis Stack)](#run-everything-locally-in-docker-webapp--redis-stack)
+  - [Run everything locally in Python with Conda (WebApp only)](#run-everything-locally-in-python-with-conda-webapp-only)
+  - [Run everything locally in Python with venv](#run-everything-locally-in-python-with-venv)
+  - [Run WebApp locally in Docker against an existing Redis deployment](#run-webapp-locally-in-docker-against-an-existing-redis-deployment)
+    - [Option 1 - Run the prebuilt Docker image](#option-1---run-the-prebuilt-docker-image)
+    - [Option 2 - Build the Docker image yourself](#option-2---build-the-docker-image-yourself)
+  - [Environment variables](#environment-variables)
 
 ## Deploy on Azure (WebApp + Redis Stack)
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fruoccofabrizio%2Fazure-open-ai-embeddings-qna%2Fmain%2Finfrastructure%2Fdeployment.json)
+[![Deploy to Azure](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2teo-ma%2Fdev-openaiocr%2Fmain%2Finfrastructure%2Fdeployment.json)
 
 Click on the Deploy to Azure button and configure your settings in the Azure Portal as described in the [Environment variables](#environment-variables) section.
 
@@ -57,7 +62,7 @@ This requires Redis running somewhere and expects that you've setup `.env` as de
 
 You can run a local Redis instance via:
 ```console
- docker run -p 6379:6379 redis/redis-stack-server:latest
+ docker run -p 10000:10000 redis/redis-stack-server:latest
 ```
 
 Create `conda` environment for Python:
@@ -80,7 +85,7 @@ This requires Redis running somewhere and expects that you've setup `.env` as de
 
 You can run a local Redis instance via:
 ```console
- docker run -p 6379:6379 redis/redis-stack-server:latest
+ docker run -p 10000:10000 redis/redis-stack-server:latest
 ```
 
 Please ensure you have Python 3.9+ installed.
